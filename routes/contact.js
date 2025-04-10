@@ -19,7 +19,8 @@ router.post("/", async (req, res) => {
       from: email,
       to: process.env.EMAIL_USER, // You receive the message here
       subject: `New Contact Form Message from ${name}`,
-      text: message,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+
     });
 
     res.json({ success: true });
